@@ -60,13 +60,13 @@ export default function PlayerSlider() {
       const currentEnemyIndex = sliderEnemyRef.current.innerSlider.state.currentSlide;
       setCurrentEnemy(photos[currentEnemyIndex]);
     };
-    // const redirect_user = () => {
-    //   if (currentPlayer.alt !== currentEnemy.alt) { 
-    //     redirect("/hi");  
-    //   } else {  
-    //     setError("Choose different players");  
-    //  } 
-    // }
+    const redirect_user = () => {
+      if (currentPlayer.alt !== currentEnemy.alt) { 
+        redirect("/play/naitys/");  
+      } else {  
+        setError("Choose different players");  
+     } 
+    }
 
     return (
       <>
@@ -112,7 +112,7 @@ export default function PlayerSlider() {
         <div className="text-center">
           <button
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-10 rounded mt-10"
-            onClick={() => redirect("/")} 
+            onClick={redirect_user} 
           >
             Start Naitys
           </button> 
